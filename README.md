@@ -1,2 +1,3 @@
-# user-service
-Api de gestão de usuários para meu tcc
+# User-service
+
+API de gestão de usuários do meu TCC

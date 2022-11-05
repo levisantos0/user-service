@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  description: "login-service"
+  version: "1.0.0"
+  title: ""
+  contact:
+    email: ""
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+paths:
+  /health/ready:
+    get:
+      tags:
+        - "health"
+      summary: return whether the service is running
+      description: return whether the service is running
+      responses:
+        "200":
+          description: Successful operation
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

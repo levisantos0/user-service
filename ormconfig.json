@@ -1,0 +1,9 @@
+{
+  "logging": true,
+  "entities": ["dist/api/database/entities/*.js"],
+  "migrations": ["dist/api/database/migrations/*.js"],
+  "cli": {
+    "migrationsDir": "src/api/database/migrations",
+    "entitiesDir": "src/api/database/entities"
+  }
+}
