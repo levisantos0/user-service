@@ -20,6 +20,6 @@ export class AuthenticateUserController {
   async checkIfUserIsAuthenticated(request: Request, response: Response) {
     const authToken = request.headers.authorization;
     const user = await this.logic.checkIfUserIsAuthenticated(authToken);
-    return response.status(user ? 201 : 400).json(user);
+    return response.status(user ? 200 : 400).json(user);
   }
 }

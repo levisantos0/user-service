@@ -22,19 +22,5 @@ export const AuthRouters = () => {
       await controller.checkIfUserIsAuthenticated(req, res)
   );
 
-  router.get(
-    "/courses",
-    ensureAuthenticatedMiddleware.ensureAuthenticated,
-    (request, response) => {
-      return response.json([
-        { id: 1, name: " NodeJS " },
-        { id: 2, name: " ReactJS " },
-        { id: 3, name: " React Native " },
-        { id: 4, name: " Flutter " },
-        { id: 5, name: " Elixir " },
-      ]);
-    }
-  );
-
   return router;
 };

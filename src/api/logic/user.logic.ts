@@ -2,7 +2,7 @@ import { IUser } from "../interface/IUser";
 import { UserRepository } from "../repositories/user.repository";
 import { Container, Service } from "typedi";
 import * as bcryptjs from "bcryptjs";
-import { UnprocessedEntityError } from "../helpers/api-erros";
+import { BadRequestError, UnprocessedEntityError } from "../helpers/api-erros";
 
 @Service()
 export class UserLogic {
@@ -20,7 +20,7 @@ export class UserLogic {
     const userAlreadyExists = await this.repository.findByEmail(data.email);
 
     if (userAlreadyExists) {
-      throw new Error("User already exists");
+      throw new BadRequestError("User already exists");
     }
 
     const createdAt: Date = new Date();
